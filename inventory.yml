@@ -1,0 +1,19 @@
+---
+all:
+  hosts:
+    192.168.178.19:
+      new_hostname: ubuntu-cp1
+    192.168.178.21:
+      new_hostname: ubuntu-wo1
+    192.168.178.22:
+      new_hostname: ubuntu-wo2
+  children:
+    k3s:
+      children:
+        k3s_cp:
+          hosts:
+            192.168.178.19:
+        k3s_worker:
+          hosts:
+            192.168.178.21:
+            192.168.178.22:
