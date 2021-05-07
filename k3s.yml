@@ -5,3 +5,10 @@
 
   roles:
     - role: k3s-worker
+
+- hosts: k3s_master
+  gather_facts: false
+  become: true
+
+  roles:
+    - role: k3s-master
